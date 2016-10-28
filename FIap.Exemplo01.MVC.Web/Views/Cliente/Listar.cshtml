@@ -1,0 +1,42 @@
+﻿<!-- model List< FIap.Exemplo01.MVC.Web.Models.Cliente> -->
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar Clientes</h2>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Crédito</th>
+        <th>Data Nascimento</th>
+        <th>Necessidades Especiais?</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    
+        
+     <!--   (arroba)foreach (var item in Model) {(arroba)item.Nome }      -->
+   
+    @{
+        for (int i = 0; i < ViewBag.lista.Count; i++)
+        {
+            <tr>
+                <td>@ViewBag.lista[i].Nome</td>
+                <td>@ViewBag.lista[i].Idade</td>
+                <td>@ViewBag.lista[i].Credito</td>
+                <td>@ViewBag.lista[i].DataNascimento</td>
+                <td>@ViewBag.lista[i].NecessidadesEspeciais</td>
+                <td>
+                    <form method="post" action="/Cliente/Excluir">
+                        <input type="hidden" name="nome" value="@ViewBag.lista[i].Nome" />
+                        <input type="submit" value="Excluir" class="btn btn-danger"/>
+                    </form>
+                </td>
+                <td><a class="btn btn btn-primary" href="/Cliente/Editar?nome=@ViewBag.lista[i].Nome">Editar</a></td>
+            </tr>
+        }
+    }
+</table>

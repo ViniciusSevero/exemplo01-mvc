@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar Produto</h2>
+
+@{
+    if (@TempData["msg"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["msg"]
+        </div>
+    }
+}
+
+<!--Nome, valor, qtde-->
+<form action="/Produto/Cadastrar" method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" name="nome" id="nome" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="valor">Valor</label>
+                <input type="text" class="form-control" name="valor" id="valor" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="qtde">Quantidade</label>
+                <input type="text" class="form-control" name="qtde" id="qtde" />
+            </div>
+            <input type="submit" value="Cadastrar" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+
