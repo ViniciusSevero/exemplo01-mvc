@@ -11,6 +11,7 @@
         <th>Idade</th>
         <th>Crédito</th>
         <th>Data Nascimento</th>
+        <th>Estado Civil</th>
         <th>Necessidades Especiais?</th>
         <th></th>
         <th></th>
@@ -28,6 +29,7 @@
                 <td>@ViewBag.lista[i].Idade</td>
                 <td>@ViewBag.lista[i].Credito</td>
                 <td>@ViewBag.lista[i].DataNascimento</td>
+                <td>@ViewBag.lista[i].EstadoCivil</td>
                 <td>@ViewBag.lista[i].NecessidadesEspeciais</td>
                 <td>
                     <form method="post" action="/Cliente/Excluir">
