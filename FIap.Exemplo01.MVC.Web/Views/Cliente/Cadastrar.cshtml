@@ -7,11 +7,8 @@
 
 <h2>Cadastrar Cliente</h2>
 
-@if (@TempData["msg"] != null)
-{
-    <div class="alert alert-success">
-        @TempData["msg"]
-    </div>
+@if(@TempData["msg"] != null) { 
+    @Helper.Mensagem(@TempData["msg"].ToString(), "alert alert-success") @* Meu Helper App_Code/Helper*@
 }
 
 <!--vai mandar para o controller Cliente e mesmo metodo da pagina, no caso Cadastrar, só que vai chamar o POST-->
@@ -69,7 +66,7 @@
 
 
     <div class="form-group">
-        <input type="submit" value="Cadastrar" class="btn btn-primary" />
+        @Helper.Submit("Salvar", "btn btn-success") @* Meu Helper App_Code/Helper*@
     </div>
 
 }
